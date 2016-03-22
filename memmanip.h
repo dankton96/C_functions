@@ -43,19 +43,20 @@ double movdbl(double mdsource, double mddestiny)
     mdsource=NULL;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//esta funcao ainda nao e funcional, o objetivo e que ela copie o conteudo de uma string para outra e insira o valor "" na string de origem
-char strmov(char strsource[], char strdestiny[])
+char strrev(char strsource[], char strdestiny[])
 {
-    if((strlen(strdestiny))<=(strlen(strsource)))
+    if(strlen(strsource)>=strlen(strdestiny))
+    {
+        for(int i=0; i<strlen(strsource); i++)
         {
-            strcpy(strdestiny,strsource);
-            strsource="";
+            strdestiny[i]=strsource[(strlen(strsource)-1)-i];
         }
+    }
     else
-        {
-            printf("A string de origem e maior que a string de destino, favor realocar o tamanho");
-        }
-
+    {
+     std::cout<<"A string de origem e maior que a string de destino, favor realocar o tamanho!"<<std::endl;
+     system("pause");
+    }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #endif // MEMMANIP_H_INCLUDED
