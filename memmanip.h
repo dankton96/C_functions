@@ -54,6 +54,7 @@ char strrev(char strsource[], char strdestiny[])
         {
             strdestiny[i]=strsource[(strlen(strsource)-1)-i];
         }
+        strdestiny[i+1]='\0';
     }
     else
     {
